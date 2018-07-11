@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01629F88-1537-4DA8-AAEF-A17EF5F8092B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextbookManage.Domain</RootNamespace>
+    <AssemblyName>TextbookManage.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Bookseller.cs" />
+    <Compile Include="BooksellerStaff.cs" />
+    <Compile Include="Comparer\PressTextbookComparer.cs" />
+    <Compile Include="Comparer\SchoolComparer.cs" />
+    <Compile Include="Comparer\SchoolTextbookComparer.cs" />
+    <Compile Include="Comparer\TextbookComparer.cs" />
+    <Compile Include="DeclarationJiaoWu.cs" />
+    <Compile Include="DeclarationTextbook.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="FeedbackState.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="IRepositories\IBooksellerRepository.cs" />
+    <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="IRepositories\IRepositoryContext.cs" />
+    <Compile Include="IRepositories\ISql.cs" />
+    <Compile Include="IRepositories\ISubscriptionRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IDeclarationRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IDepartmentRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IProfessionalClassRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ISchoolRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IStudentDeclarationJiaoWuRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IStudentDeclarationRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\IStudentRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ITeacherDeclarationJiaoWuRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ITeacherDeclarationRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ITeacherRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ITermRepository.cs" />
+    <Compile Include="IRepositories\JiaoWu\ITextbookRepository.cs" />
+    <Compile Include="ProfessionalClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="School.cs" />
+    <Compile Include="SchoolYearTerm.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentDeclaration.cs" />
+    <Compile Include="StudentDeclarationJiaoWu.cs" />
+    <Compile Include="Subscription.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherDeclaration.cs" />
+    <Compile Include="TeacherDeclarationJiaoWu.cs" />
+    <Compile Include="Term.cs" />
+    <Compile Include="Textbook.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextbookManage.Infrastructure\TextbookManage.Infrastructure.csproj">
+      <Project>{e901854e-a721-4e21-98e9-af2c963cf07b}</Project>
+      <Name>TextbookManage.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

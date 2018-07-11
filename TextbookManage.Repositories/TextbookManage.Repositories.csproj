@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD9A5CE9-D0D6-4FB4-85D4-C1A8AB63C8A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextbookManage.Repositories</RootNamespace>
+    <AssemblyName>TextbookManage.Repositories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.95\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BooksellerRepository.cs" />
+    <Compile Include="CasMapperRepository.cs" />
+    <Compile Include="DataSignRepository.cs" />
+    <Compile Include="DeclarationRepository.cs" />
+    <Compile Include="DepartmentRepository.cs" />
+    <Compile Include="EntityFramework\EntityFrameworkRepository.cs" />
+    <Compile Include="EntityFramework\EntityFrameworkRepositoryContext.cs" />
+    <Compile Include="EntityFramework\IEntityFrameworkRepositoryContext.cs" />
+    <Compile Include="EntityFramework\TbMisDbContext.cs" />
+    <Compile Include="FeedbackRepository.cs" />
+    <Compile Include="InStockRecordRepository.cs" />
+    <Compile Include="InventoryRepository.cs" />
+    <Compile Include="Mapping\ApprovalMap.cs" />
+    <Compile Include="Mapping\BooksellerMap.cs" />
+    <Compile Include="Mapping\BooksellerStaffMap.cs" />
+    <Compile Include="Mapping\CasMapperMap.cs" />
+    <Compile Include="Mapping\FeedbackApprovalMap.cs" />
+    <Compile Include="Mapping\FeedbackMap.cs" />
+    <Compile Include="Mapping\InventoryMap.cs" />
+    <Compile Include="Mapping\JiaoWu\CourseMap.cs" />
+    <Compile Include="Mapping\JiaoWu\DataSignMap.cs" />
+    <Compile Include="Mapping\JiaoWu\DepartmentMap.cs" />
+    <Compile Include="Mapping\JiaoWu\PressMap.cs" />
+    <Compile Include="Mapping\JiaoWu\ProfessionalClassMap.cs" />
+    <Compile Include="Mapping\JiaoWu\SchoolMap.cs" />
+    <Compile Include="Mapping\JiaoWu\StudentDeclarationJiaoWuMap.cs" />
+    <Compile Include="Mapping\JiaoWu\StudentDeclarationMap.cs" />
+    <Compile Include="Mapping\JiaoWu\StudentMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TeacherDeclarationJiaoWuMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TeacherDeclarationMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TeacherMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TeachingTaskMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TeachingTaskTeacherMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TermMap.cs" />
+    <Compile Include="Mapping\JiaoWu\TextbookMap.cs" />
+    <Compile Include="Mapping\ReleaseRecordMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\StockRecordMap.cs" />
+    <Compile Include="Mapping\StorageMap.cs" />
+    <Compile Include="Mapping\StudentReleaseRecordMap.cs" />
+    <Compile Include="Mapping\SubscriptionMap.cs" />
+    <Compile Include="Mapping\TbmisUserMap.cs" />
+    <Compile Include="Mapping\TeacherReleaseRecordMap.cs" />
+    <Compile Include="OutStockRecordRepository.cs" />
+    <Compile Include="PressRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReleaseRecordRepository.cs" />
+    <Compile Include="SchoolRepository.cs" />
+    <Compile Include="StorageRepository.cs" />
+    <Compile Include="ProfessionalClassRepository.cs" />
+    <Compile Include="StudentDeclarationJiaoWuRepository.cs" />
+    <Compile Include="StudentDeclarationRepository.cs" />
+    <Compile Include="StudentReleaseRecordRepository.cs" />
+    <Compile Include="StudentRepository.cs" />
+    <Compile Include="SubscriptionRepository.cs" />
+    <Compile Include="TbmisUserRepository.cs" />
+    <Compile Include="TeacherDeclarationJiaoWuRepository.cs" />
+    <Compile Include="TeacherDeclarationRepository.cs" />
+    <Compile Include="TeacherReleaseRecordRepository.cs" />
+    <Compile Include="TeacherRepository.cs" />
+    <Compile Include="TeachingTaskRepository.cs" />
+    <Compile Include="TermRepository.cs" />
+    <Compile Include="TextbookRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextbookManage.Domain\TextbookManage.Domain.csproj">
+      <Project>{9f0b3334-5e6e-4b48-a1dc-1f65b186a21d}</Project>
+      <Name>TextbookManage.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookManage.Infrastructure\TextbookManage.Infrastructure.csproj">
+      <Project>{e901854e-a721-4e21-98e9-af2c963cf07b}</Project>
+      <Name>TextbookManage.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
