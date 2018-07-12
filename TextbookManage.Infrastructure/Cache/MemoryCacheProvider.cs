@@ -105,13 +105,16 @@
                 return false;
             }
         }
+
+        public void Remove(Type type)
+        {
+            
+            throw new NotImplementedException();
+        }
         #endregion
 
 
 
-        public void Remove(Type type)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

@@ -1,12 +1,14 @@
 ﻿namespace TextbookManage.Infrastructure.InterceptionBehaviors
 {
 
-    using Microsoft.Practices.Unity.InterceptionExtension;
     using System;
     using System.Collections.Generic;
     using System.Text;
     using TextbookManage.Infrastructure.Cache;
     using TextbookManage.Infrastructure.ServiceLocators;
+    using Unity.Interception.InterceptionBehaviors;
+    using Unity.Interception.Interceptors.TypeInterceptors.VirtualMethodInterception;
+    using Unity.Interception.PolicyInjection.Pipeline;
 
     public class CacheBehavior : IInterceptionBehavior
     {
@@ -180,7 +182,6 @@
 
             return getNext().Invoke(input, getNext);
         }
-
 
         /// <summary>
         /// 获取一个<see cref="Boolean"/>值，该值表示当前拦截行为被调用时，是否真的需要执行

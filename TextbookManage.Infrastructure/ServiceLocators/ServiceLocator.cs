@@ -2,7 +2,6 @@
 namespace TextbookManage.Infrastructure.ServiceLocators
 {
 
-    using Microsoft.Practices.ServiceLocation;
     using Microsoft.Practices.Unity;
     using Microsoft.Practices.Unity.Configuration;
     using System;
@@ -10,6 +9,9 @@ namespace TextbookManage.Infrastructure.ServiceLocators
     using System.Configuration;
     using System.Collections.Generic;
     using System.Reflection;
+    using CommonServiceLocator;
+    using Unity;
+    using Unity.Resolution;
 
     public sealed class ServiceLocator : IServiceLocator, IDisposable
     {

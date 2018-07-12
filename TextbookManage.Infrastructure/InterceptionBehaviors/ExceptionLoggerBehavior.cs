@@ -2,9 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
-    using Microsoft.Practices.Unity.InterceptionExtension;
     using TextbookManage.Infrastructure.Logger;
     using TextbookManage.Infrastructure.ServiceLocators;
+    using Unity.Interception.InterceptionBehaviors;
+    using Unity.Interception.PolicyInjection.Pipeline;
 
     /// <summary>
     /// 异常日志行为
