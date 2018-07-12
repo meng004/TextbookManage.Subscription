@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TextbookManage.Domain.Models.JiaoWu
+namespace TextbookManage.Domain
 {
     public class Teacher :BaseModel
     {
@@ -17,11 +17,10 @@ namespace TextbookManage.Domain.Models.JiaoWu
         /// 教师编号
         /// </summary>
         public string Num { get; set; }
-
         /// <summary>
         /// 性别
         /// </summary>
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
         /// <summary>
         /// 部门集合
         /// </summary>

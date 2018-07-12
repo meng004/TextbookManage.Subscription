@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using TextbookManage.Infrastructure;
 
-namespace TextbookManage.Domain.Models
+namespace TextbookManage.Domain
 {
     /// <summary>
     /// 学年学期

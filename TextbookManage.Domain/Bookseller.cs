@@ -1,16 +1,8 @@
-using System;
-using System.Collections.Generic;
 
-namespace TextbookManage.Domain.Models
+namespace TextbookManage.Domain
 {
-    public class Bookseller :BaseModel
+    public class Bookseller : BaseModel
     {
-        public Bookseller()
-        {
-            this.BooksellerStaffs = new List<BooksellerStaff>();
-            this.Subscriptions = new List<Subscription>();
-        }
-
         /// <summary>
         /// 联系人
         /// </summary>
@@ -19,13 +11,5 @@ namespace TextbookManage.Domain.Models
         /// 联系电话
         /// </summary>
         public string Telephone { get; set; }
-        /// <summary>
-        /// 书商员工
-        /// </summary>
-        public virtual ICollection<BooksellerStaff> BooksellerStaffs { get; set; }
-        /// <summary>
-        /// 订单
-        /// </summary>
-        public virtual ICollection<Subscription> Subscriptions { get; set; }
     }
 }

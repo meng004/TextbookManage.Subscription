@@ -1,76 +1,48 @@
 using System;
-using System.Collections.Generic;
-using TextbookManage.Domain.Models.JiaoWu;
 
-namespace TextbookManage.Domain.Models
+
+namespace TextbookManage.Domain
 {
-    public class Subscription 
-    {
+    public abstract class Subscription 
+    {        
         public Subscription()
         {
-            TeacherDeclarations = new List<TeacherDeclaration>();
-            StudentDeclarations = new List<StudentDeclaration>();
+            this.SubscriptionStatus = SubscriptionStatus.Subscribing;
+            this.ReDeclareStatus = ReDeclareStatus.Default;
+            FeedbackDate = DateTime.Now;
         }
 
         #region 属性
-
-        /// <summary>
-        /// 订单ID
-        /// </summary>
-        //public Guid SubscriptionId { get; set; }
         /// <summary>
         /// 书商ID
         /// </summary>
-        public Guid? Bookseller_Id { get; set; }
+        public Guid Bookseller_Id { get; set; }
         /// <summary>
-        /// 教材ID
+        /// 征订状态
         /// </summary>
-        public Guid Textbook_Id { get; set; }
+        public SubscriptionStatus SubscriptionStatus { get; set; }
         /// <summary>
-        /// 回告ID
+        /// 回告日期
         /// </summary>
-        public Guid? Feedback_Id { get; set; }
+        public DateTime FeedbackDate { get; set; }
         /// <summary>
-        /// 学年学期
+        /// 回告人，书商员工姓名
         /// </summary>
-        public SchoolYearTerm SchoolYearTerm { get; set; }
+        public string FeedbackStaff { get; set; }
         /// <summary>
-        /// 计划数量
+        /// 回告说明
         /// </summary>
-        public int PlanCount { get; set; }
+        public string Remark { get; set; }
         /// <summary>
-        /// 上抛数量
+        /// 重新申报状态
         /// </summary>
-        public int SpareCount { get; set; }
-        /// <summary>
-        /// 征订日期
-        /// </summary>
-        public System.DateTime SubscriptionDate { get; set; }
-        /// <summary>
-        /// 回告状态
-        /// </summary>
-        public FeedbackState FeedbackState { get; set; }
-        /// <summary>
-        /// 并发标志
-        /// </summary>
-        public byte[] RowVersion { get; set; }
+        public ReDeclareStatus ReDeclareStatus { get; set; }
+
         /// <summary>
         /// 书商
         /// </summary>
         public virtual Bookseller Bookseller { get; set; }
 
-        /// <summary>
-        /// 教材
-        /// </summary>
-        public virtual Textbook Textbook { get; set; }
-        /// <summary>
-        /// 教师用书申报
-        /// </summary>
-        public virtual ICollection<TeacherDeclaration> TeacherDeclarations { get; set; }
-        /// <summary>
-        /// 学生用书申报
-        /// </summary>
-        public virtual ICollection<StudentDeclaration> StudentDeclarations { get; set; }
         #endregion
 
 

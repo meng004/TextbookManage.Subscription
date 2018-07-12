@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TextbookManage.Domain.Models
+namespace TextbookManage.Domain
 {
     /// <summary>
     /// 基础类
@@ -16,6 +12,5 @@ namespace TextbookManage.Domain.Models
         /// </summary>
         public Guid Id { get; }
         public string Name { get; set; }
-
     }
 }

@@ -1,9 +1,7 @@
-using System;
-using System.Collections.Generic;
 using TextbookManage.Infrastructure;
 
 
-namespace TextbookManage.Domain.Models.JiaoWu
+namespace TextbookManage.Domain
 {
     /// <summary>
     /// 实体类学年学期

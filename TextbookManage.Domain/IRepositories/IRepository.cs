@@ -4,86 +4,58 @@
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
-    using TextbookManage.Domain.Models;
 
     /// <summary>
     /// 仓储接口
     /// </summary>
-    /// <typeparam name="TAggregateRoot"></typeparam>
-    public interface IRepository<TAggregateRoot> : ISql
-        where TAggregateRoot : class
+    /// <typeparam name="TModel"></typeparam>
+    public interface IRepository<TModel> 
+        where TModel : BaseModel
     {
-        /// <summary>
-        /// 仓储上下文
-        /// </summary>
-        IRepositoryContext Context { get; }
 
         /// <summary>
         /// 获取全部
         /// </summary>
         /// <returns></returns>
-        IEnumerable<TAggregateRoot> GetAll();
-
-        /// <summary>
-        /// 分页查询
-        /// </summary>
-        /// <param name="pageIndex">页码</param>
-        /// <param name="pageCount">每页记录数量</param>
-        /// <param name="expression">条件表达式</param>
-        /// <returns></returns>
-        //IEnumerable<TAggregateRoot> GetPaged(int pageIndex, int pageCount, Expression<Func<TAggregateRoot, bool>> expression);
-
-        /// <summary>
-        /// 条件查询
-        /// </summary>
-        /// <param name="expression">条件表达式</param>
-        /// <returns></returns>
-        IEnumerable<TAggregateRoot> Find(Expression<Func<TAggregateRoot, bool>> expression);
+        IEnumerable<TModel> GetAll();
 
         /// <summary>
         /// 单对象查询
         /// </summary>
         /// <param name="expression">表达式</param>
         /// <returns>单个对象</returns>
-        TAggregateRoot Single(Expression<Func<TAggregateRoot, bool>> expression);
-
-        /// <summary>
-        /// 首个对象查询
-        /// </summary>
-        /// <param name="expression">表达式</param>
-        /// <returns></returns>
-        TAggregateRoot First(Expression<Func<TAggregateRoot, bool>> expression);
+        TModel Single(Expression<Func<TModel, bool>> expression);
 
         /// <summary>
         /// 添加
         /// </summary>
         /// <param name="entity"></param>
-        void Add(TAggregateRoot entity);
+        void Add(TModel entity);
 
         /// <summary>
         /// 移除
         /// </summary>
         /// <param name="entity"></param>
-        void Remove(TAggregateRoot entity);
+        void Remove(TModel entity);
 
         /// <summary>
         /// 批量删除
         /// </summary>
         /// <param name="expression"></param>
-        void Remove(Expression<Func<TAggregateRoot, bool>> expression);
+        void Remove(Expression<Func<TModel, bool>> expression);
 
         /// <summary>
         /// 修改
         /// </summary>
         /// <param name="entity"></param>
-        void Modify(TAggregateRoot entity);
+        void Modify(TModel entity);
 
         /// <summary>
         /// 批量修改
         /// </summary>
         /// <param name="filterExpression"></param>
         /// <param name="updateExpression"></param>
-        void Modify(Expression<Func<TAggregateRoot, bool>> filterExpression, Expression<Func<TAggregateRoot, TAggregateRoot>> updateExpression); 
+        void Modify(Expression<Func<TModel, bool>> filterExpression, Expression<Func<TModel, TModel>> updateExpression); 
             
     }
 }

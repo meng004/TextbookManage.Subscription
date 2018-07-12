@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace TextbookManage.Domain.Models
+
+namespace TextbookManage.Domain
 {
     /// <summary>
     /// 书商员工
     /// </summary>
-    public class BooksellerStaff :BaseModel
+    public class BooksellerStaff : BaseModel
     {
         /// <summary>
         /// 书商ID
@@ -18,7 +17,7 @@ namespace TextbookManage.Domain.Models
         /// </summary>
         public Gender Gender { get; set; }
         /// <summary>
-        /// 书商
+        /// 所属书商
         /// </summary>
         public virtual Bookseller Bookseller { get; set; }
     }

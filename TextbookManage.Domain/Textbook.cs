@@ -1,27 +1,12 @@
 using System;
-using System.Collections.Generic;
-using TextbookManage.Infrastructure;
 
-namespace TextbookManage.Domain.Models.JiaoWu
+
+namespace TextbookManage.Domain
 {
-    public class Textbook :BaseModel
+    public class Textbook : BaseModel
     {
-        public Textbook()
-        {
-            //StudentDeclarations = new List<StudentDeclaration>();
-            //TeacherDeclarations = new List<TeacherDeclaration>();
-            StudentDeclarationJiaoWus = new List<StudentDeclarationJiaoWu>();
-            TeacherDeclarationJiaoWus = new List<TeacherDeclarationJiaoWu>();
-            Subscriptions = new List<Subscription>();
-
-        }
 
         #region 属性
-
-        /// <summary>
-        /// 教材ID
-        /// </summary>
-        //public Guid TextbookId { get; set; }
 
         /// <summary>
         /// ISBN
@@ -38,7 +23,7 @@ namespace TextbookManage.Domain.Models.JiaoWu
         /// <summary>
         /// 定价
         /// </summary>
-        public string Price { get; set; }
+        public Decimal Price { get; set; }
         /// <summary>
         /// 版本
         /// </summary>
@@ -55,26 +40,6 @@ namespace TextbookManage.Domain.Models.JiaoWu
         /// 教材类型
         /// </summary>
         public string TextbookType { get; set; }
-        /// <summary>
-        /// 学生用书申报
-        /// </summary>
-        //public virtual ICollection<StudentDeclaration> StudentDeclarations { get; set; }
-        /// <summary>
-        /// 教师用书申报
-        /// </summary>
-        //public virtual ICollection<TeacherDeclaration> TeacherDeclarations { get; set; }
-        /// <summary>
-        /// 教务学生用书申报
-        /// </summary>
-        public virtual ICollection<StudentDeclarationJiaoWu> StudentDeclarationJiaoWus { get; set; }
-        /// <summary>
-        /// 教务教师用书申报
-        /// </summary>
-        public virtual ICollection<TeacherDeclarationJiaoWu> TeacherDeclarationJiaoWus { get; set; }
-        /// <summary>
-        /// 订单
-        /// </summary>
-        public virtual ICollection<Subscription> Subscriptions { get; set; }
 
         #endregion
 

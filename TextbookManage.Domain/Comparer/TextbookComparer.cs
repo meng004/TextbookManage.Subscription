@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using TextbookManage.Domain.Models.JiaoWu;
 
 
 
-namespace TextbookManage.Domain.Models.Comparer
+namespace TextbookManage.Domain
 {
     public class TextbookComparer : IEqualityComparer<Textbook>
     {

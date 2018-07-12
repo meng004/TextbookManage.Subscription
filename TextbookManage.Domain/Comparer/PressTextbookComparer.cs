@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextbookManage.Domain.Models.JiaoWu;
+﻿using System.Collections.Generic;
 
-namespace TextbookManage.Domain.Models.Comparer
+
+namespace TextbookManage.Domain
 {
-    public class PressTextbookComparer<T> : IEqualityComparer<T>
-        where T : DeclarationJiaoWu
+    /// <summary>
+    /// 比较器
+    /// 比较教材的ISBN、定价、出版社、版本、版次
+    /// </summary>
+    public class PressTextbookComparer : IEqualityComparer<Textbook>
     {
-        public bool Equals(T x, T y)
+        public bool Equals(Textbook x, Textbook y)
         {
             if (object.ReferenceEquals(x, y))
             {
@@ -20,17 +19,29 @@ namespace TextbookManage.Domain.Models.Comparer
             {
                 return false;
             }
-            if (x.Textbook.Press == y.Textbook.Press && x.Textbook_Id == y.Textbook_Id)
+            //比较ISBN、定价、出版社、版本、版次
+            if (
+                x.Isbn.Equals(y.Isbn, System.StringComparison.CurrentCultureIgnoreCase)
+                && (System.Math.Abs(x.Price - y.Price) < 1e-5M)
+                && x.Press.Equals(y.Press, System.StringComparison.CurrentCultureIgnoreCase)
+                && x.Edition.Equals(y.Edition, System.StringComparison.CurrentCultureIgnoreCase)
+                && x.PrintCount.Equals(x.PrintCount, System.StringComparison.CurrentCultureIgnoreCase)
+                )
                 return true;
             else
                 return false;
         }
 
-        public int GetHashCode(T obj)
+        public int GetHashCode(Textbook obj)
         {
             if (object.ReferenceEquals(obj, null))
                 return 0;
-            return obj.Textbook.Press.GetHashCode() + obj.Textbook_Id.GetHashCode();
+            var code = obj.Isbn.GetHashCode()
+                + obj.Price.GetHashCode()
+                + obj.Press.GetHashCode()
+                + obj.Edition.GetHashCode()
+                + obj.PrintCount.GetHashCode();
+            return code;
         }
     }
 }
