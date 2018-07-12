@@ -9,7 +9,7 @@
     /// 仓储接口
     /// </summary>
     /// <typeparam name="TModel"></typeparam>
-    public interface IRepository<TModel> 
+    public interface IBaseRepository<TModel> 
         where TModel : BaseModel
     {
 

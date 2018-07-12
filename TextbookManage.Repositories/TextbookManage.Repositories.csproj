@@ -49,6 +49,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,38 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapping\ApprovalMap.cs" />
-    <Compile Include="Mapping\BooksellerMap.cs" />
-    <Compile Include="Mapping\BooksellerStaffMap.cs" />
-    <Compile Include="Mapping\CasMapperMap.cs" />
-    <Compile Include="Mapping\FeedbackApprovalMap.cs" />
-    <Compile Include="Mapping\FeedbackMap.cs" />
-    <Compile Include="Mapping\InventoryMap.cs" />
-    <Compile Include="Mapping\JiaoWu\CourseMap.cs" />
-    <Compile Include="Mapping\JiaoWu\DataSignMap.cs" />
-    <Compile Include="Mapping\JiaoWu\DepartmentMap.cs" />
-    <Compile Include="Mapping\JiaoWu\PressMap.cs" />
-    <Compile Include="Mapping\JiaoWu\ProfessionalClassMap.cs" />
-    <Compile Include="Mapping\JiaoWu\SchoolMap.cs" />
-    <Compile Include="Mapping\JiaoWu\StudentDeclarationJiaoWuMap.cs" />
-    <Compile Include="Mapping\JiaoWu\StudentDeclarationMap.cs" />
-    <Compile Include="Mapping\JiaoWu\StudentMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TeacherDeclarationJiaoWuMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TeacherDeclarationMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TeacherMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TeachingTaskMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TeachingTaskTeacherMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TermMap.cs" />
-    <Compile Include="Mapping\JiaoWu\TextbookMap.cs" />
-    <Compile Include="Mapping\ReleaseRecordMap.cs" />
-    <Compile Include="Mapping\RoleMap.cs" />
-    <Compile Include="Mapping\StockRecordMap.cs" />
-    <Compile Include="Mapping\StorageMap.cs" />
-    <Compile Include="Mapping\StudentReleaseRecordMap.cs" />
-    <Compile Include="Mapping\SubscriptionMap.cs" />
-    <Compile Include="Mapping\TbmisUserMap.cs" />
-    <Compile Include="Mapping\TeacherReleaseRecordMap.cs" />
+    <Compile Include="Mapping\StudentMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TextbookManage.Domain\TextbookManage.Domain.csproj">
