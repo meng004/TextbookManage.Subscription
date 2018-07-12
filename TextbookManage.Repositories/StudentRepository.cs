@@ -1,20 +1,18 @@
-﻿using DapperExtensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using TextbookManage.Domain;
 using TextbookManage.Domain.IRepositories;
+
 
 namespace TextbookManage.Repositories
 {
     public class StudentRepository : IStudentRepository
     {
-        private string _connectionString = ConfigurationManager.ConnectionStrings["test"].ConnectionString;
+        
         public void Add(Student entity)
         {
             throw new NotImplementedException();
@@ -22,14 +20,12 @@ namespace TextbookManage.Repositories
 
         public IEnumerable<Student> GetAll()
         {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
+            using (TextbookManageDbContext context = new TextbookManageDbContext())
             {
-                conn.Open();
-                var predicate = Predicates.Field<Student>(s => s.Name, Operator.Like, "李");
-                var list = conn.GetList<Student>(predicate);
-                conn.Close();
-                return list;
+                var students = context.Students.ToList();
+                return students;
             }
+
         }
 
         public void Modify(Student entity)
@@ -56,5 +52,17 @@ namespace TextbookManage.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public ProfessionalClass First()
+        {
+            using (TextbookManageDbContext context = new TextbookManageDbContext())
+            {                
+                var student = context.ProfessionalClasses.FirstOrDefault(t => t.Id == "DC95791BC76B4E99A41FD887BAACFC61");
+                
+                return student;
+            }
+        }
+
+
     }
 }

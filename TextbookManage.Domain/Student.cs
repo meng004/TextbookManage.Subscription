@@ -4,7 +4,7 @@ namespace TextbookManage.Domain
 {
     public class Student : BaseModel
     {
-        #region 属性
+        #region 属性 
         /// <summary>
         /// 学号
         /// </summary>
@@ -12,15 +12,23 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 性别
         /// </summary>
-        public Gender Gender { get; set; }
+        public string Gender { get; set; }
         /// <summary>
-        /// 在校否
+        /// 入学日期
         /// </summary>
-        public bool Zxf { get; set; }
+        public string EntranceDate { get; set; }
+        /// <summary>
+        /// 身份证号
+        /// </summary>
+        public string IdNumber { get; set; }
+        /// <summary>
+        /// 电话
+        /// </summary>
+        public string Mobile { get; set; }
         /// <summary>
         /// 班级ID
         /// </summary>
-        public Guid ProfessionalClass_Id { get; set; }
+        public string Class_Id { get; set; }
         /// <summary>
         /// 班级
         /// </summary>

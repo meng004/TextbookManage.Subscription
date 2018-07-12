@@ -10,7 +10,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 获取当前领域实体类的全局唯一标识。
         /// </summary>
-        public Guid Id { get; }
+        public string Id { get; set; }
         public string Name { get; set; }
     }
 }

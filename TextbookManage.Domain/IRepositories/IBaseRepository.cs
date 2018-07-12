@@ -19,6 +19,8 @@
         /// <returns></returns>
         IEnumerable<TModel> GetAll();
 
+       
+
         /// <summary>
         /// 单对象查询
         /// </summary>

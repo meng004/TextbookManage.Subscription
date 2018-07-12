@@ -24,7 +24,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// ѧԺID
         /// </summary>
-        public Guid School_Id { get; set; }
+        public string School_Id { get; set; }
         /// <summary>
         /// ѧԺ
         /// </summary>
