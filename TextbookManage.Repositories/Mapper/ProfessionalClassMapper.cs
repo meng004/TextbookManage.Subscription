@@ -1,27 +1,22 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using DapperExtensions.Mapper;
 using TextbookManage.Domain;
 
 namespace TextbookManage.Repositories.Mapper
 {
-    public class ProfessionalClassMapper : EntityTypeConfiguration<ProfessionalClass>
+    public class ProfessionalClassMapper : ClassMapper<ProfessionalClass>
     {
         public ProfessionalClassMapper()
         {
             // Primary Key
-            this.HasKey(t => t.Id);
-
-            // Properties
-            this.Property(t => t.Name)
-                .IsRequired()
-                .HasMaxLength(50);
+            this.Map(t => t.Id).Key(KeyType.Guid).Column("ClassId");
 
             // Table & Column Mappings
-            this.ToTable("ProfessionalClass", "dbo");
-            this.Property(t => t.Id).HasColumnName("ClassId");
-            this.Property(t => t.Num).HasColumnName("ClassNum");
-            this.Property(t => t.Name).HasColumnName("ClassName");
-            this.Property(t => t.Grade).HasColumnName("Grade");
-            this.Property(t => t.School_Id).HasColumnName("SchoolID");
+            this.Table("ProfessionalClass");
+            this.Map(t => t.Id).Column("ClassId");
+            this.Map(t => t.Num).Column("ClassNum");
+            this.Map(t => t.Name).Column("ClassName");
+            this.Map(t => t.Grade).Column("Grade");
+            this.Map(t => t.School_Id).Column("SchoolID");
    
             //班级与学生，1：N
             //this.HasMany(t => t.Students)

@@ -6,63 +6,39 @@ using System.Linq;
 using System.Linq.Expressions;
 using TextbookManage.Domain;
 using TextbookManage.Domain.IRepositories;
-
+using Dapper;
+using DapperExtensions;
 
 namespace TextbookManage.Repositories
 {
-    public class StudentRepository : IStudentRepository
+    public class StudentRepository : BaseRepository, IStudentRepository
     {
-        
-        public void Add(Student entity)
+        public StudentRepository():base("test")
         {
-            throw new NotImplementedException();
+
         }
 
         public IEnumerable<Student> GetAll()
         {
-            using (TextbookManageDbContext context = new TextbookManageDbContext())
-            {
-                var students = context.Students.ToList();
-                return students;
-            }
-
+            var students = Connection.GetList<Student>();
+            return students;
         }
 
-        public void Modify(Student entity)
+        public Student First()
         {
-            throw new NotImplementedException();
+
+            var student = Connection.Get<Student>("0009CB1B71BC4DB6B2B57FE584A80E03");
+
+            return student;
+
         }
 
-        public void Modify(Expression<Func<Student, bool>> filterExpression, Expression<Func<Student, Student>> updateExpression)
+        public IEnumerable<Student> GetByClassId(string classId)
         {
-            throw new NotImplementedException();
+            var predicate = Predicates.Field<Student>(f => f.Class_Id, Operator.Eq, classId);
+            var list = Connection.GetList<Student>(predicate);
+            return list.ToList();
+
         }
-
-        public void Remove(Student entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(Expression<Func<Student, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student Single(Expression<Func<Student, bool>> expression)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProfessionalClass First()
-        {
-            using (TextbookManageDbContext context = new TextbookManageDbContext())
-            {                
-                var student = context.ProfessionalClasses.FirstOrDefault(t => t.Id == "DC95791BC76B4E99A41FD887BAACFC61");
-                
-                return student;
-            }
-        }
-
-
     }
 }

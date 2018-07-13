@@ -1,6 +1,9 @@
-﻿namespace TextbookManage.Domain.IRepositories
+﻿using System.Collections.Generic;
+
+namespace TextbookManage.Domain.IRepositories
 {
-    public interface IStudentRepository : IBaseRepository<Student>
+    public interface IStudentRepository 
     {
+        IEnumerable<Student> GetByClassId(string classId);
     }
 }

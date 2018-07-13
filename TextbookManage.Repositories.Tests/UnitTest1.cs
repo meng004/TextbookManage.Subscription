@@ -12,7 +12,7 @@ namespace TextbookManage.Repositories.Tests
         public void TestMethod1()
         {            
             var repo = new StudentRepository();
-            var result = repo.First().Students;
+            var result = repo.First();
             Assert.IsInstanceOfType(result, typeof(Student));
         }
 
@@ -22,6 +22,15 @@ namespace TextbookManage.Repositories.Tests
 
             var repo = new StudentRepository();
             var result = repo.GetAll();
+            Assert.IsTrue(result.Count() > 0);
+        }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+
+            var repo = new StudentRepository();
+            var result = repo.GetByClassId("DC95791BC76B4E99A41FD887BAACFC61");
             Assert.IsTrue(result.Count() > 0);
         }
     }
