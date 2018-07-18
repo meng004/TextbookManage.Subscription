@@ -59,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="IRepositories\IBaseRepository.cs" />
+    <Compile Include="IRepositories\IStudentRepository.cs" />
     <Compile Include="Mapper\ProfessionalClassMapper.cs" />
     <Compile Include="Mapper\StudentMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

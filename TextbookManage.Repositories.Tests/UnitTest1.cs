@@ -1,13 +1,20 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TextbookManage.Domain;
-
+using TextbookManage.Repositories.Mapper;
 
 namespace TextbookManage.Repositories.Tests
 {
     [TestClass]
     public class UnitTest1
     {
+        [TestInitialize]
+        public void Initial()
+        {
+            //DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { typeof(StudentMapper).Assembly });
+        }
+
+
         [TestMethod]
         public void TestMethod1()
         {            

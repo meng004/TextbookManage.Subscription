@@ -50,8 +50,6 @@
     <Compile Include="Declaration.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="IRepositories\IBaseRepository.cs" />
-    <Compile Include="IRepositories\IStudentRepository.cs" />
     <Compile Include="ProfessionalClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReDeclareStatus.cs" />
