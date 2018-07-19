@@ -11,13 +11,14 @@ namespace TextbookManage.Repositories.Tests
         [TestInitialize]
         public void Initial()
         {
-            //DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { typeof(StudentMapper).Assembly });
+           // DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { typeof(StudentMapper).Assembly });
         }
 
 
         [TestMethod]
         public void TestMethod1()
-        {            
+        {
+           // DapperExtensions.DapperExtensions.SetMappingAssemblies(new[] { typeof(StudentMapper).Assembly });
             var repo = new StudentRepository();
             var result = repo.First();
             Assert.IsInstanceOfType(result, typeof(Student));

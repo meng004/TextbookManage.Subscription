@@ -12,14 +12,13 @@ namespace TextbookManage.Repositories
 
         public IEnumerable<Student> GetAll()
         {
-            var students = base.GetList();
-            return students;
+            return new List<Student>();
         }
 
         public Student First()
         {
-
-            var student = base.Get("0009CB1B71BC4DB6B2B57FE584A80E03");
+            //var student = base.GetList().FirstOrDefault();
+            var student = GetList().FirstOrDefault();
 
             return student;
 
