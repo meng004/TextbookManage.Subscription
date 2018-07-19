@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TextbookManage.Domain
 {
@@ -8,10 +7,9 @@ namespace TextbookManage.Domain
     /// </summary>
     public abstract class Declaration
     {
-        public Declaration(string term)
+        protected Declaration(string term)
         {
             yearTerm = new SchoolYearTerm(term);
-            Textbooks = new List<Textbook>();
         }
 
         #region 属性
@@ -30,7 +28,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 学院ID
         /// </summary>
-        public Guid SchoolId { get; set; }
+        public string SchoolId { get; set; }
         /// <summary>
         /// 学院名称
         /// </summary>
@@ -38,7 +36,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 系教研室ID
         /// </summary>
-        public Guid DepartmentId { get; set; }
+        public string DepartmentId { get; set; }
         /// <summary>
         /// 系教研室名称
         /// </summary>
@@ -46,7 +44,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 课程ID
         /// </summary>
-        public Guid CourseId { get; set; }
+        public string CourseId { get; set; }
         /// <summary>
         /// 课程编号
         /// </summary>
@@ -55,6 +53,10 @@ namespace TextbookManage.Domain
         /// 课程名称
         /// </summary>
         public string CourseName { get; set; }
+        /// <summary>
+        /// 教材ID
+        /// </summary>
+        public string TextbookId { get; set; }
         /// <summary>
         /// 联系电话
         /// </summary>
@@ -83,11 +85,6 @@ namespace TextbookManage.Domain
         /// 备注
         /// </summary>
         public string Remark { get; set; }
-        /// <summary>
-        /// 教材列表
-        /// 处理申报与教材之间1对N关系
-        /// </summary>
-        public virtual ICollection<Textbook> Textbooks { get; set; }
 
         #endregion
 

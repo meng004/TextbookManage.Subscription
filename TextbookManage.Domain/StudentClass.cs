@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace TextbookManage.Domain
 {
     /// <summary>
@@ -12,19 +11,15 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 班级ID
         /// </summary>
-        public Guid ProfessionalClass_Id { get; set; }
+        public string ProfessionalClassId { get; set; }
         /// <summary>
         /// 申报ID
         /// </summary>
-        public Guid Declaration_Id { get; set; }
+        public string DeclarationId { get; set; }
         /// <summary>
         /// 申报数量
         /// </summary>
         public int DeclarationCount { get; set; }
-        /// <summary>
-        /// 专业班级
-        /// </summary>
-        public virtual ProfessionalClass ProfessionalClass { get; set; }
 
     }
 }

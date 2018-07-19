@@ -28,12 +28,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// °à¼¶ID
         /// </summary>
-        public string Class_Id { get; set; }
-        /// <summary>
-        /// °à¼¶
-        /// </summary>
-        public virtual ProfessionalClass ProfessionalClass { get; set; }
-
+        public string ClassId { get; set; }
 
         #endregion
 

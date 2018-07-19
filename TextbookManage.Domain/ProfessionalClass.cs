@@ -6,12 +6,7 @@ namespace TextbookManage.Domain
 {
     public class ProfessionalClass : BaseModel
     {
-        public ProfessionalClass()
-        {
-            this.Students = new List<Student>();
-        }
-
-        #region 属性
+         #region 属性
 
         /// <summary>
         /// 班号
@@ -24,16 +19,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// 学院ID
         /// </summary>
-        public string School_Id { get; set; }
-        /// <summary>
-        /// 学院
-        /// </summary>
-        public virtual School School { get; set; }
-        /// <summary>
-        /// 学生集合
-        /// </summary>
-        public virtual ICollection<Student> Students { get; set; }
-
+        public string SchoolId { get; set; }
 
         #endregion
 

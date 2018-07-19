@@ -4,8 +4,8 @@ using System;
 namespace TextbookManage.Domain
 {
     public abstract class Subscription 
-    {        
-        public Subscription()
+    {
+        protected Subscription()
         {
             this.SubscriptionStatus = SubscriptionStatus.Subscribing;
             this.ReDeclareStatus = ReDeclareStatus.Default;
@@ -14,9 +14,13 @@ namespace TextbookManage.Domain
 
         #region 属性
         /// <summary>
+        /// 申报计划ID
+        /// </summary>
+        public string DeclarationId { get; set; }
+        /// <summary>
         /// 书商ID
         /// </summary>
-        public Guid Bookseller_Id { get; set; }
+        public string BooksellerId { get; set; }
         /// <summary>
         /// 征订状态
         /// </summary>
@@ -37,11 +41,6 @@ namespace TextbookManage.Domain
         /// 重新申报状态
         /// </summary>
         public ReDeclareStatus ReDeclareStatus { get; set; }
-
-        /// <summary>
-        /// 书商
-        /// </summary>
-        public virtual Bookseller Bookseller { get; set; }
 
         #endregion
 
