@@ -208,6 +208,7 @@
     <Content Include="App_Code\USCTAMis.Web.UserControl.dll" />
     <Content Include="App_Code\USCTAMis.Web.WebClient.dll" />
     <Content Include="App_Code\USCTAMis.Web.WebControls.dll" />
+    <Content Include="App_Data\crebas.sql" />
     <Content Include="App_Data\Database1.mdf" />
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
