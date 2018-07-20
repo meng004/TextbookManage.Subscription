@@ -17,9 +17,9 @@ namespace TextbookManage.Repositories.Mapper
             //this.Map(t => t.Id).Column("StudentId");
             this.Map(t => t.Num).Column("StudentNum");
             this.Map(t => t.Name).Column("StudentName");
-            this.Map(t => t.Gender).Column("Gender");
-            this.Map(t => t.ClassId).Column("ClassID");
-            
+            this.Map(t => t.Gender).Column("Sex");
+            this.Map(t => t.Class_Id).Column("ClassID");
+            this.Map(t => t.ProfessionalClass).Ignore();
             //this.Map(t => t.EntranceDate).Column("EntranceDate");
              AutoMap();
         }
