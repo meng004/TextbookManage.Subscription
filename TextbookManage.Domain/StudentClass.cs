@@ -5,7 +5,7 @@ namespace TextbookManage.Domain
     /// 学生班级
     /// 处理学生用书申报与班级1对N关系
     /// </summary>
-    public class StudentClass : ProfessionalClass
+    public class StudentClass 
     {
 
         /// <summary>
