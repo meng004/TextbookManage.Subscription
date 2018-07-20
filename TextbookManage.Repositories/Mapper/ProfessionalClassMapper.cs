@@ -16,7 +16,7 @@ namespace TextbookManage.Repositories.Mapper
             this.Map(t => t.Num).Column("ClassNum");
             this.Map(t => t.Name).Column("ClassName");
             this.Map(t => t.Grade).Column("Grade");
-            this.Map(t => t.School_Id).Column("SchoolID");
+            this.Map(t => t.SchoolId).Column("SchoolID");
    
             //班级与学生，1：N
             //this.HasMany(t => t.Students)
