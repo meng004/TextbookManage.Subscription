@@ -1,7 +1,7 @@
 /*==============================================================*/
 /* Database name:  TbMIS                                        */
 /* DBMS name:      Microsoft SQL Server 2008                    */
-/* Created on:     2018-07-20 13:46:17                          */
+/* Created on:     2018-07-20 16:41:30                          */
 /*==============================================================*/
 
 
@@ -201,10 +201,6 @@ if exists (select 1
 go
 
 alter table Teacher
-   drop constraint ak_TeacherNumID_Teacher
-go
-
-alter table Teacher
    drop constraint PK_TEACHER
 go
 
@@ -282,9 +278,9 @@ create table Subscription.Associate_StudentDeclaration_Bookseller (
    DeclarationID        nvarchar(50)         not null default newid(),
    BooksellerID         nvarchar(50)         not null default newid(),
    SubscriptionStatus   nchar(1)             not null default '0',
-   FeedbackDate         datetime             null,
+   FeedbackDate         datetime             null default getdate(),
    FeedbackStaff        nvarchar(50)         null,
-   Remark               nvarchar(200)        null default '无',
+   Remark               nvarchar(200)        null default N'无',
    ReDeclareStatus      nchar(1)             not null default '3'
 )
 go
@@ -314,9 +310,9 @@ create table Subscription.Associate_TeacherDeclaration_Bookseller (
    DeclarationID        nvarchar(50)         not null default newid(),
    BooksellerID         nvarchar(50)         not null default newid(),
    SubscriptionStatus   nchar(1)             not null default '0',
-   FeedbackDate         datetime             null,
+   FeedbackDate         datetime             null default getdate(),
    FeedbackStaff        nvarchar(50)         null,
-   Remark               nvarchar(200)        null default '无',
+   Remark               nvarchar(200)        null default N'无',
    ReDeclareStatus      nchar(1)             not null default '3'
 )
 go
@@ -334,10 +330,10 @@ go
 /*==============================================================*/
 create table Bookseller (
    BooksellerID         nvarchar(50)         not null default newid(),
-   BooksellerNum        int                  identity(1,1) not for replication,
-   BooksellerName       nvarchar(50)         not null default '无',
-   Contact              nvarchar(50)         null default '无',
-   Telephone            nvarchar(20)         null default '无'
+   BooksellerNum        nvarchar(20)         not null,
+   BooksellerName       nvarchar(50)         not null default N'无',
+   Contact              nvarchar(50)         null default N'无',
+   Telephone            nvarchar(20)         null default N'无'
 )
 go
 
@@ -354,11 +350,11 @@ go
 /*==============================================================*/
 create table Department (
    DepartmentID         nvarchar(50)         not null default newid(),
-   DepartmentNum        nvarchar(20)         not null default '无',
-   DepartmentName       nvarchar(50)         not null default '无',
+   DepartmentNum        nvarchar(20)         not null default N'无',
+   DepartmentName       nvarchar(50)         not null default N'无',
    SchoolID             nvarchar(50)         not null default newid(),
-   Contact              nvarchar(50)         null default '无',
-   Telephone            nvarchar(20)         null default '无'
+   Contact              nvarchar(50)         null default N'无',
+   Telephone            nvarchar(20)         null default N'无'
 )
 go
 
@@ -371,9 +367,9 @@ go
 /*==============================================================*/
 create table ProfessionalClass (
    ClassID              nvarchar(50)         not null default newid(),
-   ClassNum             nvarchar(20)         not null default '无',
-   ClassName            nvarchar(50)         not null default '无',
-   Grade                nvarchar(20)         not null default '无',
+   ClassNum             nvarchar(20)         not null default N'无',
+   ClassName            nvarchar(50)         not null default N'无',
+   Grade                nvarchar(20)         not null default N'无',
    SchoolID             nvarchar(50)         not null default newid()
 )
 go
@@ -395,10 +391,10 @@ go
 /*==============================================================*/
 create table School (
    SchoolID             nvarchar(50)         not null default newid(),
-   SchoolNum            nvarchar(20)         not null default '无',
-   SchoolName           nvarchar(50)         not null default '无',
-   Contact              nvarchar(50)         null default '无',
-   Telephone            nvarchar(20)         null default '无'
+   SchoolNum            nvarchar(20)         not null default N'无',
+   SchoolName           nvarchar(50)         not null default N'无',
+   Contact              nvarchar(50)         null default N'无',
+   Telephone            nvarchar(20)         null default N'无'
 )
 go
 
@@ -411,9 +407,9 @@ go
 /*==============================================================*/
 create table Student (
    StudentID            nvarchar(50)         not null default newid(),
-   StudentNum           nvarchar(20)         not null default '无',
-   StudentName          nvarchar(50)         not null default '无',
-   Gender               nvarchar(10)         not null default '男',
+   StudentNum           nvarchar(20)         null default N'无',
+   StudentName          nvarchar(50)         not null default N'无',
+   Gender               nvarchar(10)         not null default N'男',
    EntranceDate         nvarchar(50)         null,
    IdNumber             nvarchar(50)         null,
    Mobile               nvarchar(20)         null,
@@ -422,7 +418,7 @@ create table Student (
 go
 
 alter table Student
-   add constraint CKC_Gender_Student check (Gender in ('男','女','未知','未说明'))
+   add constraint CKC_Gender_Student check (Gender in (N'男',N'女',N'未知',N'未说明'))
 go
 
 alter table Student
@@ -440,7 +436,7 @@ create table Subscription.StudentDeclaration (
    DeclarationID        nvarchar(50)         not null default newid(),
    TextbookID           nvarchar(50)         null default newid(),
    DeclarationNum       int                  identity(1,1) not for replication,
-   Term                 nvarchar(20)         not null default '无',
+   Term                 nvarchar(20)         not null default N'无',
    SchoolID             nvarchar(50)         not null,
    SchoolName           nvarchar(50)         not null,
    DepartmentID         nvarchar(50)         not null,
@@ -448,7 +444,7 @@ create table Subscription.StudentDeclaration (
    CourseID             nvarchar(50)         not null,
    CourseCode           nvarchar(50)         null,
    CourseName           nvarchar(50)         not null,
-   Telephone            nvarchar(50)         null default '无',
+   Telephone            nvarchar(50)         null default N'无',
    ImportDate           datetime             not null default getdate(),
    ApprovalStatus       nvarchar(50)         not null default '0',
    Priority             nvarchar(50)         not null,
@@ -475,24 +471,18 @@ go
 /*==============================================================*/
 create table Teacher (
    TeacherID            nvarchar(50)         not null default newid(),
-   TeacherNum           nvarchar(20)         not null default '无',
-   TeacherName          nvarchar(50)         not null default '无',
-   Gender               nvarchar(10)         not null default '男',
-   TeacherNumID2        int                  identity(1,1) not for replication,
-   TeacherNumID         AS (REPLICATE('0', 6 - LEN(TeacherNumID2)) + CAST(TeacherNumID2 AS VARCHAR(10)))
+   TeacherNum           nvarchar(20)         null default N'无',
+   TeacherName          nvarchar(50)         not null default N'无',
+   Gender               nvarchar(10)         not null default N'男'
 )
 go
 
 alter table Teacher
-   add constraint CKC_Gender_Teacher check (Gender in ('男','女','未知','未说明'))
+   add constraint CKC_Gender_Teacher check (Gender in (N'男',N'女',N'未知',N'未说明'))
 go
 
 alter table Teacher
    add constraint PK_TEACHER primary key nonclustered (TeacherID)
-go
-
-alter table Teacher
-   add constraint ak_TeacherNumID_Teacher unique (TeacherNumID2)
 go
 
 /*==============================================================*/
@@ -502,7 +492,7 @@ create table Subscription.TeacherDeclaration (
    DeclarationID        nvarchar(50)         not null default newid(),
    TextbookID           nvarchar(50)         null default newid(),
    DeclarationNum       int                  identity(1,1) not for replication,
-   Term                 nvarchar(20)         not null default '无',
+   Term                 nvarchar(20)         not null default N'无',
    SchoolID             nvarchar(50)         not null,
    SchoolName           nvarchar(50)         not null,
    DepartmentID         nvarchar(50)         not null,
@@ -510,7 +500,7 @@ create table Subscription.TeacherDeclaration (
    CourseID             nvarchar(50)         not null,
    CourseCode           nvarchar(50)         null,
    CourseName           nvarchar(50)         not null,
-   Telephone            nvarchar(50)         null default '无',
+   Telephone            nvarchar(50)         null default N'无',
    ImportDate           datetime             not null default getdate(),
    ApprovalStatus       nvarchar(50)         not null default '0',
    Priority             nvarchar(50)         not null,
@@ -567,21 +557,20 @@ go
 /*==============================================================*/
 create table Textbook (
    TextbookID           nvarchar(50)         not null default newid(),
-   TextbookNum2         int                  identity(1,1) not for replication,
-   TextbookNum          AS (REPLICATE('0', 8 - LEN(TextbookNum2)) + CAST(TextbookNum2 AS VARCHAR(10))),
-   Isbn                 nvarchar(20)         not null default '无',
-   TextbookName         nvarchar(200)        not null default '无',
-   Press                nvarchar(50)         not null default '无',
-   Author               nvarchar(50)         not null default '无',
+   TextbookNum          nvarchar(20)         not null default N'无',
+   Isbn                 nvarchar(20)         not null default N'无',
+   TextbookName         nvarchar(200)        not null default N'无',
+   Press                nvarchar(50)         not null default N'无',
+   Author               nvarchar(50)         not null default N'无',
    Edition              nvarchar(20)         not null default '1',
    PrintingCount        nvarchar(20)         not null default '1',
    RetailPrice          numeric(10,2)        not null default 0.00,
-   TextbookType         nvarchar(50)         null default '无',
-   Translator           nvarchar(50)         null default '无',
-   Language             nvarchar(20)         null default '无',
+   TextbookType         nvarchar(50)         null default N'无',
+   Translator           nvarchar(50)         null default N'无',
+   Language             nvarchar(20)         null default N'无',
    Page                 int                  null default 0,
-   Summary              nvarchar(200)        null default '无',
-   Catalog              nvarchar(200)        null default '无',
+   Summary              nvarchar(200)        null default N'无',
+   Catalog              nvarchar(200)        null default N'无',
    IsSelfCompile        nchar(1)             not null default '0'
 )
 go
