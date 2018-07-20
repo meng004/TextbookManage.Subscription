@@ -26,7 +26,7 @@ namespace TextbookManage.Repositories
 
         public IEnumerable<Student> GetByClassId(string classId)
         {
-            var predicate = Predicates.Field<Student>(f => f.Class_Id, Operator.Eq, classId);
+            var predicate = Predicates.Field<Student>(f => f.ClassId, Operator.Eq, classId);
             var list = base.GetList(predicate);
             return list.ToList();
 
