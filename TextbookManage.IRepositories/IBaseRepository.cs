@@ -1,10 +1,10 @@
-﻿namespace TextbookManage.IRepositories
-{
-    using DapperExtensions;
-    using System.Collections.Generic;
-    using System.Data;
-    using TextbookManage.Domain;
+﻿using DapperExtensions;
+using System.Collections.Generic;
+using System.Data;
+using TextbookManage.Domain;
 
+namespace TextbookManage.IRepositories
+{
     /// <summary>
     /// 仓储接口
     /// 参考DapperExtension

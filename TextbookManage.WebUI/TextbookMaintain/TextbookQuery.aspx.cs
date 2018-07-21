@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TextbookManage.WebUI.TextbookService;
+using TextbookManage.ViewModels;
+//using TextbookManage.WebUI.TextbookService;
 
 namespace TextbookManage.WebUI.TextbookMaintain
 {

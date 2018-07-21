@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookManage.WebUI", "Tex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookManage.Repositories.Tests", "TextbookManage.Repositories.Tests\TextbookManage.Repositories.Tests.csproj", "{7320A3BA-E3ED-4126-A388-41D88252E7BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookManage.IRepositories", "TextbookManage.IRepositories\TextbookManage.IRepositories.csproj", "{390E393B-DF57-4E22-B6BF-5ED8F5D581CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,12 +47,16 @@ Global
 		{7320A3BA-E3ED-4126-A388-41D88252E7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7320A3BA-E3ED-4126-A388-41D88252E7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7320A3BA-E3ED-4126-A388-41D88252E7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390E393B-DF57-4E22-B6BF-5ED8F5D581CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390E393B-DF57-4E22-B6BF-5ED8F5D581CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390E393B-DF57-4E22-B6BF-5ED8F5D581CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390E393B-DF57-4E22-B6BF-5ED8F5D581CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 		SolutionGuid = {438386A2-C8E1-46B1-A52C-B62038E8957D}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

@@ -61,8 +61,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="StudentRepositoryUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextbookRepositoryUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -72,6 +73,10 @@
     <ProjectReference Include="..\TextbookManage.Domain\TextbookManage.Domain.csproj">
       <Project>{01629f88-1537-4da8-aaef-a17ef5f8092b}</Project>
       <Name>TextbookManage.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookManage.IRepositories\TextbookManage.IRepositories.csproj">
+      <Project>{390e393b-df57-4e22-b6bf-5ed8f5d581cd}</Project>
+      <Name>TextbookManage.IRepositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextbookManage.Repositories\TextbookManage.Repositories.csproj">
       <Project>{bd9a5ce9-d0d6-4fb4-85d4-c1a8ab63c8a0}</Project>

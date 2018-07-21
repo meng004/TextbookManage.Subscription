@@ -563,14 +563,11 @@ create table Textbook (
    Press                nvarchar(50)         not null default N'无',
    Author               nvarchar(50)         not null default N'无',
    Edition              nvarchar(20)         not null default '1',
-   PrintingCount        nvarchar(20)         not null default '1',
+   PrintCount           nvarchar(20)         not null default '1',
    RetailPrice          numeric(10,2)        not null default 0.00,
    TextbookType         nvarchar(50)         null default N'无',
-   Translator           nvarchar(50)         null default N'无',
-   Language             nvarchar(20)         null default N'无',
-   Page                 int                  null default 0,
-   Summary              nvarchar(200)        null default N'无',
-   Catalog              nvarchar(200)        null default N'无',
+   [Page]               int                  null default 0,
+   PublishDate          nvarchar(50)         null ,
    IsSelfCompile        nchar(1)             not null default '0'
 )
 go

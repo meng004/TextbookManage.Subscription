@@ -213,6 +213,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\SQLQuery1.sql" />
     <Content Include="App_Data\testdata.sql" />
     <Content Include="App_Themes\USTAMisTheme\Title.png" />
     <Content Include="App_Themes\USTAMisTheme\USCTAMis.css" />
@@ -685,6 +686,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppSettings.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextbookManage.Domain\TextbookManage.Domain.csproj">
+      <Project>{01629f88-1537-4da8-aaef-a17ef5f8092b}</Project>
+      <Name>TextbookManage.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookManage.Infrastructure\TextbookManage.Infrastructure.csproj">
+      <Project>{e901854e-a721-4e21-98e9-af2c963cf07b}</Project>
+      <Name>TextbookManage.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookManage.Repositories\TextbookManage.Repositories.csproj">
+      <Project>{bd9a5ce9-d0d6-4fb4-85d4-c1a8ab63c8a0}</Project>
+      <Name>TextbookManage.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookManage.ViewModels\TextbookManage.ViewModels.csproj">
+      <Project>{e90bd2fa-796e-46c6-ad7e-a47f84941146}</Project>
+      <Name>TextbookManage.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
