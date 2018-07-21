@@ -214,6 +214,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\FoundationData-v2.sql" />
+    <Content Include="App_Data\FoundationData-v3.sql" />
     <Content Include="App_Data\SQLQuery1.sql" />
     <Content Include="App_Themes\USTAMisTheme\Title.png" />
     <Content Include="App_Themes\USTAMisTheme\USCTAMis.css" />
