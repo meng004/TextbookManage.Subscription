@@ -213,8 +213,8 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\FoundationData-v2.sql" />
     <Content Include="App_Data\SQLQuery1.sql" />
-    <Content Include="App_Data\testdata.sql" />
     <Content Include="App_Themes\USTAMisTheme\Title.png" />
     <Content Include="App_Themes\USTAMisTheme\USCTAMis.css" />
     <Content Include="App_Themes\USTAMisTheme\UTMisTable.css" />
