@@ -10,7 +10,7 @@ namespace TextbookManage.Domain
         /// <summary>
         /// ±àºÅ
         /// </summary>
-        public int Num { get; set; }
+        public string Num { get; set; }
         /// <summary>
         /// ISBN
         /// </summary>
